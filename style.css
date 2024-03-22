@@ -1,0 +1,85 @@
+/* Styles.css */
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+}
+
+.board {
+	display: inline-block;
+	margin: 20px;
+}
+
+.cell {
+	width: 16px;
+	height: 16px;
+	border: 1px solid #ccc;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 20px;
+	cursor: pointer;
+
+	/* Default color for unrevealed tiles */
+	background-color: #eee;
+    background-image: url('./assets/TileUnknown.png');
+
+	/* Default color for unrevealed tile text */
+	color: #333;
+}
+
+.revealed {
+	/* Color for revealed tiles */
+	background-color: #ccc;
+    background-image: url('./assets/TileEmpty.png');
+
+	/* Color for revealed tile text */
+	color: #000;
+}
+
+.mine {
+	/* Color for mines */
+	background-color: #ff3333;
+    background-image: url("./assets/TileExploded.png");
+}
+
+.unclickedmine {
+	background-color: #ccc;
+	background-image: url("./assets/TileMine.png")
+}
+
+.flagged {
+	background-image: url("./assets/TileFlag.png")
+}
+
+.face {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	background-image: url('assets/face/smiley.png');
+	width: 26px;
+	height: 26px;
+}
+
+.faceshocked {
+	background-image: url("./assets/face/surprised.png");
+}
+
+.face:active {
+	background-image: url('assets/face/smiley_pressed.png');
+}
+
+.facedead {
+	background-image: url('assets/face/dead.png');
+}
+
+.notCorrectFlag {
+	background-image: url('./assets/TileFlagNotMine.png');
+}
+
+.facewin {
+	background-image: url('./assets/face/win.png')
+}
+
+.agentn86:hover {
+	text-decoration:none;
+}

@@ -1,0 +1,34 @@
+<!-- Index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Minesweeper Game</title>
+	<link rel="icon" href="./icon.ico">
+</head>
+<link rel="stylesheet" href="./style.css">
+
+<body oncontextmenu="return false;">
+	<h1>Minesweeper</h1>
+	<audio id="audio"><source type="audio/mp3" src="./win.mp3"></audio>
+	<p><b>Controls:</b> MOUSE1 (left click) to reveal block, MOUSE2 (right click) to place a flag.</p>
+	<p>Click the face to restart the game.</p>
+	<img src="./assets/score/score_0.png" id="flags1"><img src="./assets/score/score_0.png" id="flags2"><img src="./assets/score/score_0.png" id="flags3"> <button class="face" id="face"></button> <img src="./assets/score/score_0.png" id="timer1"><img src="./assets/score/score_0.png" id="timer2"><img src="./assets/score/score_0.png" id="timer3">
+	<br>
+	<div id="gameBoard"></div>
+	<dialog id="dialog" align="center">
+		<h3>You Win!</h3>
+		Congrats, you found <a id="minesBefore">all</a> <b id="minesText">10 mines</b> in <b><a id="seconds">3B</a id="secondsText"> second(s)</b>!
+		<br><br>
+		<a style="color: gray;"><i>Made with stupidity by <a href="https://linktr.ee/agentn86" style="color: gray; .agentn86:hover {text-decoration: none;}" class="agentn86">@agentn86</a>!</i></a>
+		<br><br>
+		<button onclick="document.getElementById('dialog').close()">Close</button>
+	</dialog>
+	<br>
+	
+</body>
+<script src="./script.js"></script>
+
+</html></script>
+
+</html>
