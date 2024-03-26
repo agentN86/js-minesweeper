@@ -1,9 +1,28 @@
-// Script.js
-const numRows = 8; // How /\ it goes!
-//     ||
-//     \/
-const numCols = 8; // How <--------> it goes!
-const numMines = 10; // How much mines there are
+
+// wowie this is made by
+// AGENTN86
+// *comments may be added for your viewing pleasure*
+
+var numRows = 8; // How tall (y) it goes
+var numCols = 8; // How long (x) it goes
+var numMines = 10; // How much mines there are
+
+// DEFAULT:
+// numRows = 8;
+// numCols = 8;
+// numMines = 10;
+
+// You can use this preset to get started: (STARTER:)
+
+// numRows = 5;
+// numCols = 5;
+// numMines = 5;
+
+// Or you can just be a bit wacky...
+
+// numRows = 10;
+// numCols = 10;
+// numMines = 50;
 
 var seconds = setInterval(function () {
 	if (died == false) { seconds += 1 }
@@ -52,6 +71,53 @@ const gameBoard =
 		"gameBoard"
 	);
 let board = [];
+
+function checkWin() {
+
+	let foundMines = 0
+	let revealedCells = 0
+	let correctCells = (numRows * numCols) - numMines
+
+	for (let y = 0; y < numRows; y++) {
+		for (let x = 0; x < numCols; x++) {
+			if (board[y][x].isMine == true && board[y][x].flagged == true) {
+				foundMines += 1
+			}
+			if (board[y][x].revealed == true) {
+				revealedCells += 1
+			}
+		}
+	}
+
+	// How to Win:
+	// - Flag all the mines
+	// - Reveal all cells except for mines
+
+	if (foundMines == numMines && chosenFlags == foundMines) {
+
+		if (correctCells == revealedCells) {
+
+			died = true;
+			document.getElementById("face").classList.add("facewin")
+			if (numMines == 1) {
+				document.getElementById('minesBefore').innerText = "the literal"
+				document.getElementById('minesText').innerText = "1 mine"
+			} else {
+				document.getElementById('minesBefore').innerText = "all"
+				document.getElementById('minesText').innerText = numMines + " mines"
+
+			}
+
+			document.getElementById('seconds').innerText = seconds
+
+			document.getElementById('dialog').showModal()
+			document.getElementById('audio').play()
+
+		}
+
+	}
+
+}
 
 function initializeBoard() {
 	chosenFlags = 0;
@@ -285,6 +351,7 @@ function renderBoard() {
 					if (event.button == 0) {
 						if (board[i][j].flagged == false) {
 							revealCell(i, j)
+							checkWin()
 						}
 					}
 
@@ -315,37 +382,7 @@ function renderBoard() {
 							// alert(realdigits[1])
 							// alert(realdigits[0])
 
-
-
-							let foundMines = 0
-
-							for (let y = 0; y < numRows; y++) {
-								for (let x = 0; x < numCols; x++) {
-									if (board[y][x].isMine == true && board[y][x].flagged == true) {
-										foundMines += 1
-									}
-								}
-							}
-
-							if (foundMines == numMines && chosenFlags == foundMines) {
-								died = true;
-								document.getElementById("face").classList.add("facewin")
-								if (numMines == 1) {
-									document.getElementById('minesBefore').innerText = "the literal"
-									document.getElementById('minesText').innerText = "1 mine"
-								} else {
-									document.getElementById('minesBefore').innerText = "all"
-									document.getElementById('minesText').innerText = numMines + " mines"
-
-								}
-
-								document.getElementById('seconds').innerText = seconds
-
-								document.getElementById('dialog').showModal()
-								document.getElementById('audio').play()
-							}
-
-
+							checkWin();
 
 
 						} else {
@@ -370,6 +407,8 @@ function renderBoard() {
 								document.getElementById('flags1').src = "./assets/score/score_" + realdigits[0] + ".png"
 							}
 
+							checkWin();
+
 						}
 					}
 				}
@@ -389,6 +428,8 @@ function renderBoard() {
 
 initializeBoard();
 renderBoard();
+document.getElementById("face").classList.remove("faceshocked")
+died = false;
 
 
 
@@ -405,5 +446,53 @@ document.getElementById("face").onclick = function () {
 	document.getElementById("face").classList.remove("faceshocked")
 	died = false;
 };
-	document.getElementById("face").classList.remove("faceshocked")
-	died = false;
+
+document.getElementById("gamemode").addEventListener("change", () => {
+	switch (document.getElementById("gamemode").value) {
+		case "classic":
+
+			numRows = 8
+			numCols = 8
+			numMines = 10
+
+			initializeBoard();
+			renderBoard();
+
+			document.getElementById("face").classList.remove("faceshocked")
+			died = false;
+
+
+			break
+
+		case "googleeasy":
+
+			numRows = 8
+			numCols = 10
+			numMines = 10
+
+			initializeBoard();
+			renderBoard();
+
+			document.getElementById("face").classList.remove("faceshocked")
+			died = false;
+
+
+			break
+
+		case "googlemedium":
+
+			numRows = 14
+			numCols = 18
+			numMines = 40
+
+			initializeBoard();
+			renderBoard();
+
+			document.getElementById("face").classList.remove("faceshocked")
+			died = false;
+
+
+			break
+	}
+
+})
