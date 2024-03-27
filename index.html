@@ -9,33 +9,56 @@
 
 <body oncontextmenu="return false;">
 	<h1>Minesweeper</h1>
-	<audio id="audio"><source type="audio/mp3" src="./win.mp3"></audio>
+	<audio id="audio">
+		<source type="audio/mp3" src="./win.mp3">
+	</audio>
 	<p><b>Controls:</b> MOUSE1 (left click) to reveal block, MOUSE2 (right click) to place a flag.</p>
-	<p>There are a bit of images, so loading up the game for the first time may not show textures. Please wait until the images show up!</p>
+	<p>There are a bit of images, so loading up the game for the first time may not show textures. Please wait until the
+		images show up!</p>
 	<p>Click the face to restart the game.</p>
-	<img src="./assets/score/score_0.png" id="flags1"><img src="./assets/score/score_0.png" id="flags2"><img src="./assets/score/score_0.png" id="flags3"> <button class="face" id="face"></button> <img src="./assets/score/score_0.png" id="timer1"><img src="./assets/score/score_0.png" id="timer2"><img src="./assets/score/score_0.png" id="timer3">
+	<img src="./assets/score/score_0.png" id="flags1"><img src="./assets/score/score_0.png" id="flags2"><img
+		src="./assets/score/score_0.png" id="flags3"> <button class="face" id="face"></button> <img
+		src="./assets/score/score_0.png" id="timer1"><img src="./assets/score/score_0.png" id="timer2"><img
+		src="./assets/score/score_0.png" id="timer3">
 	<br>
 	<div id="gameBoard"></div>
 	<br>
 	<p><b>Gamemode:</b></p>
 	<select id="gamemode">
+		<!-- LxH -->
 		<option value="classic">Classic (Default)</option>
 		<option value="googleeasy">Google Easy</option> <!-- 10x8 10 Mines -->
 		<option value="googlemedium">Google Medium</option> <!-- 18x14 40 Mines -->
+		<option value="googlehard">Google Hard</option> <!-- 24x20 100 Mines-->
+		<option value="custom">Custom</option>
 	</select>
+	<div id="customConfig">
+		<p><b>Custom Config:</b></p>
+		<p1>Length:&nbsp;</p1><input type="number" min="0" max="70" value="8" id="lenINPUT">
+		<br><br>
+		<p1>Height:&nbsp;</p1><input type="number" min="0" max="70" value="8" id="heiINPUT">
+		<br><br>
+		<p1>Mines:&nbsp;</p1><input type="number" min="0" max="500" value="10" id="minINPUT">
+		<br><br>
+		<button id="setupboard">Setup Board!</button>
+	</div>
 	<dialog id="dialog" align="center">
 		<h3>You Win!</h3>
-		Congrats, you found <a id="minesBefore">all</a> <b id="minesText">10 mines</b> in <b><a id="seconds">3B</a id="secondsText"> second(s)</b>!
+		Congrats, you found <a id="minesBefore">all</a> <b id="minesText">10 mines</b> in <b><a id="seconds">3B</a
+				id="secondsText"> second(s)</b>!
 		<br><br>
-		<a style="color: gray;"><i>Made with stupidity by <a href="https://linktr.ee/agentn86" style="color: gray; .agentn86:hover {text-decoration: none;}" class="agentn86">@agentn86</a><a style="color: gray;">!</a></i></a>
+		<a style="color: gray;"><i>Made with stupidity by <a href="https://linktr.ee/agentn86"
+					style="color: gray; .agentn86:hover {text-decoration: none;}" class="agentn86">@agentn86</a><a
+					style="color: gray;">!</a></i></a>
 		<br><br>
 		<button onclick="document.getElementById('dialog').close()">Close</button>
 	</dialog>
 	<br>
-	
+
 </body>
 <script src="./script.js"></script>
 
-</html></script>
+</html>
+</script>
 
 </html>

@@ -1,4 +1,3 @@
-
 // wowie this is made by
 // AGENTN86
 // *comments may be added for your viewing pleasure*
@@ -447,6 +446,20 @@ document.getElementById("face").onclick = function () {
 	died = false;
 };
 
+document.getElementById('setupboard').onclick = function () {
+
+	numRows = document.getElementById('heiINPUT').value
+	numCols = document.getElementById('lenINPUT').value
+	numMines = document.getElementById('minINPUT').value
+
+	initializeBoard();
+	renderBoard();
+
+	document.getElementById("face").classList.remove("faceshocked")
+	died = false;
+
+}
+
 document.getElementById("gamemode").addEventListener("change", () => {
 	switch (document.getElementById("gamemode").value) {
 		case "classic":
@@ -459,6 +472,7 @@ document.getElementById("gamemode").addEventListener("change", () => {
 			renderBoard();
 
 			document.getElementById("face").classList.remove("faceshocked")
+			document.getElementById("customConfig").style.display = "none"
 			died = false;
 
 
@@ -474,6 +488,7 @@ document.getElementById("gamemode").addEventListener("change", () => {
 			renderBoard();
 
 			document.getElementById("face").classList.remove("faceshocked")
+			document.getElementById("customConfig").style.display = "none"
 			died = false;
 
 
@@ -489,8 +504,30 @@ document.getElementById("gamemode").addEventListener("change", () => {
 			renderBoard();
 
 			document.getElementById("face").classList.remove("faceshocked")
+			document.getElementById("customConfig").style.display = "none"
 			died = false;
 
+
+			break
+
+		case "googlehard":
+
+			numRows = 20
+			numCols = 24
+			numMines = 100
+
+			initializeBoard();
+			renderBoard();
+
+			document.getElementById("face").classList.remove("faceshocked")
+			document.getElementById("customConfig").style.display = "none"
+			died = false;
+
+			break
+
+		case "custom":
+
+			document.getElementById("customConfig").style.display = "block"
 
 			break
 	}
