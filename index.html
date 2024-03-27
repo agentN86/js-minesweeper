@@ -27,10 +27,14 @@
 	<select id="gamemode">
 		<!-- LxH -->
 		<option value="classic">Classic (Default)</option>
-		<option value="googleeasy">Google Easy</option> <!-- 10x8 10 Mines -->
-		<option value="googlemedium">Google Medium</option> <!-- 18x14 40 Mines -->
-		<option value="googlehard">Google Hard</option> <!-- 24x20 100 Mines-->
-		<option value="custom">Custom</option>
+		<optgroup label="Google Gamemodes">
+			<option value="googleeasy">Google Easy</option> <!-- 10x8 10 Mines -->
+		        <option value="googlemedium">Google Medium</option> <!-- 18x14 40 Mines -->
+		        <option value="googlehard">Google Hard</option> <!-- 24x20 100 Mines-->
+		</optgroup>
+		<optgroup label="Special Gamemodes">
+		        <option value="custom">Custom</option>
+	        </optgroup>
 	</select>
 	<div id="customConfig">
 		<p><b>Custom Config:</b></p>
