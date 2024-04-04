@@ -30,6 +30,7 @@ body {
 	/* Color for revealed tiles */
 	background-color: #ccc;
     background-image: url('./assets/TileEmpty.png');
+	cursor: default;
 
 	/* Color for revealed tile text */
 	color: #000;
