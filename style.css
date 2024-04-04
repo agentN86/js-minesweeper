@@ -87,3 +87,7 @@ body {
 #customConfig {
 	display: none;
 }
+
+table {
+	margin: auto;
+}

@@ -14,35 +14,42 @@
 	<audio id="audio">
 		<source type="audio/mp3" src="./win.mp3">
 	</audio>
-	<p><b>Controls:</b> MOUSE1 (left click) to reveal block, MOUSE2 (right click) to place a flag.</p>
-	<p>There are a bit of images, so loading up the game for the first time may not show textures. Please wait until the
-		images show up!</p>
-	<p>Click the face to restart the game.</p>
-	<img src="./assets/score/score_0.png" id="flags1"><img src="./assets/score/score_0.png" id="flags2"><img
-		src="./assets/score/score_0.png" id="flags3"> <button class="face" id="face"></button> <img
-		src="./assets/score/score_0.png" id="timer1"><img src="./assets/score/score_0.png" id="timer2"><img
-		src="./assets/score/score_0.png" id="timer3">
+	<img src="./assets/score/score_0.png" id="flags1" draggable="false"><img src="./assets/score/score_0.png" id="flags2" draggable="false"><img src="./assets/score/score_0.png" id="flags3" draggable="false">
+	<button class="face" id="face"></button>
+	<img src="./assets/score/score_0.png" id="timer1" draggable="false"><img src="./assets/score/score_0.png" id="timer2" draggable="false"><img src="./assets/score/score_0.png" id="timer3" draggable="false">
 	<br>
 	<div id="gameBoard"></div>
 	<br>
-	<p><b>Gamemode:</b></p>
-	<select id="gamemode">
-		<!-- LxH -->
-		<option value="classic">Classic (Default)</option>
-		<optgroup label="Google Gamemodes">
-			<option value="googleeasy">Google Easy</option> <!-- 10x8 10 Mines -->
-		        <option value="googlemedium">Google Medium</option> <!-- 18x14 40 Mines -->
-		        <option value="googlehard">Google Hard</option> <!-- 24x20 100 Mines-->
-		</optgroup>
-		<optgroup label="Special Gamemodes">
-		        <option value="custom">Custom</option>
-	        </optgroup>
-	</select>
+	<table>
+		<tr>
+			<th>
+				<p><b>Gamemode:</b></p>
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<select id="gamemode">
+					<!-- LxH -->
+					<option value="classic">Classic (Default)</option>
+					<optgroup label="Google Gamemodes">
+						<option value="googleeasy">Google Easy</option> <!-- 10x8 10 Mines -->
+							<option value="googlemedium">Google Medium</option> <!-- 18x14 40 Mines -->
+							<option value="googlehard">Google Hard</option> <!-- 24x20 100 Mines-->
+					</optgroup>
+					<optgroup label="Special Gamemodes">
+							<option value="custom">Custom</option>
+						</optgroup>
+				</select>
+			</th>
+		</tr>
+	</table>
+	
+	
 	<div id="customConfig">
 		<p><b>Custom Config:</b></p>
-		<p1>Length:&nbsp;</p1><input type="number" min="0" max="70" value="8" id="lenINPUT">
+		<p1>Length:&nbsp;</p1><input type="number" min="1" max="70" value="8" id="lenINPUT">
 		<br><br>
-		<p1>Height:&nbsp;</p1><input type="number" min="0" max="70" value="8" id="heiINPUT">
+		<p1>Height:&nbsp;</p1><input type="number" min="1" max="70" value="8" id="heiINPUT">
 		<br><br>
 		<p1>Mines:&nbsp;</p1><input type="number" min="0" max="500" value="10" id="minINPUT">
 		<br><br>
@@ -57,12 +64,12 @@
 					style="color: gray; .agentn86:hover {text-decoration: none;}" class="agentn86">@agentn86</a><a
 					style="color: gray;">!</a></i></a>
 		<br><br>
-		<a href="https://twitter.com/share?ref_src=twsrc%5Etfw&text=I just played JS Minesweeper made by @agentn86 and survived the mines! #agentn86&url=https://agentn86.github.io/js-minesweeper" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<!-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="I just played JS-Minesweeper by @agentn86 and survived the mines! You can play it here:" data-url="https://agentn86.github.io/js-minesweeper/" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		<p1>&nbsp;</p1>
 		<script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-share-url="https://agentn86.github.io/js-minesweeper/" data-comment="I just played this amazing game made by @agentn86 (on twttr) and survived all the mines! Why not give it a try?"></script>
 		<p1>&nbsp;</p1>
 		<div class="fb-share-button" data-href="https://agentn86.github.io/js-minesweeper/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fagentn86.github.io%2Fjs-minesweeper%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-		<br><br>
+		<br><br> -->
 		<button onclick="document.getElementById('dialog').close()">Close</button>
 	</dialog>
 	<br>
