@@ -88,6 +88,46 @@ body {
 	display: none;
 }
 
+.gamesTable {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+caption {
+    padding: 6px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black; /* Added */
+    border-right: 1px solid black; /* Added */
+}
+
+#gamesTableTH th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black; /* Added */
+}
+
+#gamesTableTH th:first-child {
+    border-left: 1px solid black;
+}
+
+#gamesTableTH th:last-child {
+    border-right: 1px solid black; /* Added border to last column */
+}
+
+a {
+	color: black;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 table {
 	margin: auto;
 }
