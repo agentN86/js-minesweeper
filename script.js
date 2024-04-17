@@ -240,66 +240,66 @@ function revealCell(row, col) {
 
 	if (board[row][col].isMine) {
 		// Handle game over
-		if (turns == 1) {
+//		if (turns == 1) {
 			// Moves the mine somewhere else, so you don't die on your first turn
-			console.log("Player accidentally got a mine on their first turn, so the mine is moving...")
-			board[row][col].isMine = false;
-			board[row][col].dontPlace = true;
-
-			let minesPlaced = 0;
-			while (minesPlaced < 1) {
-				const row = Math.floor(
-					Math.random() * numRows
-				);
-				const col = Math.floor(
-					Math.random() * numCols
-				);
-				if (!board[row][col].isMine && board[row][col].dontPlace == false) {
-					board[row][
-						col
-					].isMine = true;
-					minesPlaced++;
-				}
-			}
-
-			for (
-				let dx = -1;
-				dx <= 1;
-				dx++
-			) {
-				for (
-					let dy = -1;
-					dy <= 1;
-					dy++
-				) {
-					//if(board[row + dx][col + dy].count === 0) {
-						revealCell(
-							row + dx,
-							col + dy
-						);
-					//}
-				}
-			}
-
-			board[row][col].revealed = true;
-
-			for (let y = 0; y < numRows; y++) {
-				for (
-					let x = 0;
-					x < numCols;
-					x++
-				) {
-					if (board[y][x].isMine == true) {
-						board[y][x].revealed = false;
-						renderBoard();
-					}
-				}
-			}
-
-			renderBoard();
-			return;
-
-		}
+//			console.log("Player accidentally got a mine on their first turn, so the mine is moving...")
+//			board[row][col].isMine = false;
+//			board[row][col].dontPlace = true;
+//
+//			let minesPlaced = 0;
+//			while (minesPlaced < 1) {
+//				const row = Math.floor(
+//					Math.random() * numRows
+//				);
+//				const col = Math.floor(
+//					Math.random() * numCols
+//				);
+//				if (!board[row][col].isMine && board[row][col].dontPlace == false) {
+//					board[row][
+//						col
+//					].isMine = true;
+//					minesPlaced++;
+//				}
+//			}
+//
+//			for (
+//				let dx = -1;
+//				dx <= 1;
+//				dx++
+//			) {
+//				for (
+//					let dy = -1;
+//					dy <= 1;
+//					dy++
+//				) {
+//					//if(board[row + dx][col + dy].count === 0) {
+//						revealCell(
+//							row + dx,
+//							col + dy
+//						);
+//					//}
+//				}
+//			}
+//
+//			board[row][col].revealed = true;
+//
+//			for (let y = 0; y < numRows; y++) {
+//				for (
+//					let x = 0;
+//					x < numCols;
+//					x++
+//				) {
+//					if (board[y][x].isMine == true) {
+//						board[y][x].revealed = false;
+//						renderBoard();
+//					}
+//				}
+//			}
+//
+//			renderBoard();
+//			return;
+//
+		//}
 
 		board[row][col].firstMine = true;
 		died = true;
