@@ -104,18 +104,18 @@ caption {
     border-right: 1px solid black; /* Added */
 }
 
-#gamesTableTH th {
+.gamesTableTH th {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid black;
     border-right: 1px solid black; /* Added */
 }
 
-#gamesTableTH th:first-child {
+.gamesTableTH th:first-child {
     border-left: 1px solid black;
 }
 
-#gamesTableTH th:last-child {
+.gamesTableTH th:last-child {
     border-right: 1px solid black; /* Added border to last column */
 }
 
