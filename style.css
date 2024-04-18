@@ -80,6 +80,10 @@ body {
 	background-image: url('./assets/face/win.png')
 }
 
+.shader {
+    background-color: #e0f7fa;
+}
+
 .agentn86:hover {
 	text-decoration:none;
 }
