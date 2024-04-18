@@ -100,6 +100,7 @@ body {
 caption {
     padding: 6px;
     text-align: center;
+	background-color: #4dd0ea;
     font-weight: bold;
     font-size: 15px;
     border-top: 1px solid black;
@@ -110,7 +111,7 @@ caption {
 
 .gamesTableTH th {
     padding: 10px;
-    text-align: left;
+    text-align: middle;
     border-bottom: 1px solid black;
     border-right: 1px solid black; /* Added */
 }
